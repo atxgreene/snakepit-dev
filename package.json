@@ -7,6 +7,11 @@
     "dev": "python3 -m http.server 5173",
     "serve": "python3 -m http.server 5173"
   },
-  "keywords": ["ai-ops", "agent-governance", "local-first-ai", "token-burn"],
+  "keywords": [
+    "ai-ops",
+    "agent-governance",
+    "local-first-ai",
+    "token-burn"
+  ],
   "license": "UNLICENSED"
 }

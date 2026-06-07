@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#060806" />
+    <title>Snakepit - AI Operations Command Center</title>
+    <meta name="description" content="Snakepit helps small and mid-market teams reduce token burn, govern AI agents, and deploy local-first AI operations." />
+    <meta property="og:title" content="Snakepit - AI Operations Command Center" />
+    <meta property="og:description" content="Stop token burn. Fix agent chaos. Ship useful AI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/social-card.svg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Snakepit home">
+        <img src="assets/snakepit-mark.svg" alt="" class="brand-mark" />
+        <span>Snakepit</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#audit">Audit</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#scorecard">Scorecard</a>
+        <a href="#stack">Stack</a>
+      </nav>
+      <a class="button button-small button-outline" href="mailto:hello@snakepit.dev?subject=AI%20Ops%20Audit">Book audit</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Local-first AI operations</p>
+          <h1>Bring your AI stack under control.</h1>
+          <p class="hero-subhead">
+            Snakepit helps small and mid-market teams stop token burn, govern agent workflows,
+            and deploy AI systems that are cheaper, safer, observable, and actually useful.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#audit">Run the audit preview</a>
+            <a class="button button-ghost" href="#stack">View the stack</a>
+          </div>
+          <div class="signal-row" aria-label="Core problems Snakepit solves">
+            <span>Token burn</span>
+            <span>Shadow AI</span>
+            <span>Broken workflows</span>
+            <span>No observability</span>
+          </div>
+        </div>
+
+        <aside class="command-card" aria-label="AI operations command card">
+          <div class="terminal-topbar">
+            <span></span><span></span><span></span>
+            <strong>snakepit://ops-control</strong>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="prompt">S&gt;</span> scan_ai_stack --target midmarket</div>
+            <div class="terminal-line muted">found: 7 tools / 4 agents / 0 approval layers</div>
+            <div class="terminal-line warning">risk: HIGH - unmanaged model access</div>
+            <div class="terminal-line good">recommend: gateway + traces + local route</div>
+            <div class="terminal-line"><span class="cursor"></span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="audit">
+        <div class="section-heading">
+          <p class="eyebrow">Generative UI demo</p>
+          <h2>Show the problem live.</h2>
+          <p>
+            Select a company profile and the page generates an AI Ops canvas: current stack,
+            likely leaks, recommendations, and the first deployment sprint.
+          </p>
+        </div>
+
+        <div class="ops-grid">
+          <div class="panel selector-panel">
+            <h3>Company profile</h3>
+            <p class="muted">This is a controlled/declarative hybrid: fixed components, generated content model.</p>
+            <div class="segmented" role="tablist" aria-label="Company profile selector">
+              <button class="segment active" data-profile="saas" type="button">SaaS</button>
+              <button class="segment" data-profile="recruiting" type="button">Recruiting</button>
+              <button class="segment" data-profile="healthcare" type="button">Healthcare</button>
+              <button class="segment" data-profile="manufacturing" type="button">Manufacturing</button>
+            </div>
+            <div class="mini-metrics" id="profileMetrics"></div>
+          </div>
+
+          <div class="panel canvas-panel">
+            <div class="panel-header">
+              <h3>AI Ops Control Map</h3>
+              <span class="status-pill">Live preview</span>
+            </div>
+            <div class="ops-canvas" id="opsCanvas" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-grid" id="simulator">
+        <div>
+          <p class="eyebrow">Token Burn Cleanup</p>
+          <h2>Estimate where spend leaks.</h2>
+          <p>
+            Illustrative model for showing prospects why routing, context discipline, caching,
+            and local models matter. Replace the assumptions with real data during an audit.
+          </p>
+          <div class="slider-stack">
+            <label>
+              Developers using AI agents
+              <input id="developers" type="range" min="2" max="75" value="25" />
+              <span id="developersValue">25</span>
+            </label>
+            <label>
+              Average context size
+              <input id="contextSize" type="range" min="50" max="800" step="25" value="500" />
+              <span id="contextValue">500k</span>
+            </label>
+            <label>
+              Active agent workflows
+              <input id="agents" type="range" min="1" max="18" value="5" />
+              <span id="agentsValue">5</span>
+            </label>
+          </div>
+        </div>
+        <div class="panel spend-panel">
+          <div class="spend-row">
+            <span>Current monthly spend</span>
+            <strong id="currentSpend">$14,230</strong>
+          </div>
+          <div class="spend-row green">
+            <span>After routing + local workloads</span>
+            <strong id="routedSpend">$4,190</strong>
+          </div>
+          <div class="spend-row">
+            <span>Estimated avoidable spend</span>
+            <strong id="savingsSpend">$10,040</strong>
+          </div>
+          <div class="bar-track" aria-hidden="true"><div id="savingsBar" class="bar-fill"></div></div>
+          <ul class="recommendation-list">
+            <li>Install gateway-level cost tracking.</li>
+            <li>Route repeatable tasks to cheaper/local models.</li>
+            <li>Cap context and remove stale workspace state.</li>
+            <li>Trace model calls by user, workflow, and outcome.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="scorecard">
+        <div class="section-heading">
+          <p class="eyebrow">Lead capture mechanism</p>
+          <h2>AI Maturity Assessment</h2>
+          <p>Three questions produce a Snakepit Score and recommended first move.</p>
+        </div>
+        <div class="scorecard-grid">
+          <form class="panel assessment" id="assessmentForm">
+            <label class="check-row">
+              <input type="checkbox" name="productionAccess" />
+              <span>Do agents access production systems?</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" name="spendTracking" />
+              <span>Do you track token spend by user and workflow?</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" name="approvalFlows" />
+              <span>Do you have approval workflows for risky actions?</span>
+            </label>
+          </form>
+          <div class="panel score-output" id="scoreOutput" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="stack">
+        <div class="section-heading">
+          <p class="eyebrow">Reference architecture</p>
+          <h2>What Snakepit actually deploys.</h2>
+        </div>
+        <div class="architecture">
+          <div class="arch-node">Users / Developers / Operators</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node highlight">AI Gateway: LiteLLM</div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-split">
+            <div class="arch-node">Frontier models<br /><small>Claude / OpenAI / Gemini</small></div>
+            <div class="arch-node">Local models<br /><small>Ollama / vLLM / OpenRouter</small></div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-split">
+            <div class="arch-node">Agent workflows<br /><small>OpenCode / Codex / custom ops</small></div>
+            <div class="arch-node">Observability<br /><small>Langfuse traces / evals / budgets</small></div>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-node">Business workflow: ATS, support, CRM, reporting, internal knowledge</div>
+        </div>
+      </section>
+
+      <section class="section cta-section">
+        <p class="eyebrow">First productized offer</p>
+        <h2>AI Ops Audit + Token Burn Cleanup</h2>
+        <p>
+          In 10 business days, Snakepit maps where AI is being used, what it costs,
+          where workflows are leaking, and what to fix first.
+        </p>
+        <a class="button" href="mailto:hello@snakepit.dev?subject=AI%20Ops%20Audit">Book AI Ops Audit</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Snakepit.dev</span>
+      <span>Stop token burn. Fix agent chaos. Ship useful AI.</span>
+    </footer>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

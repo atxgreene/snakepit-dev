@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#060806"/>
+  <circle cx="110" cy="70" r="250" fill="#B8FF4D" opacity="0.12"/>
+  <circle cx="1080" cy="150" r="260" fill="#5BE7FF" opacity="0.08"/>
+  <rect x="80" y="80" width="1040" height="470" rx="36" fill="#101510" stroke="#243024" stroke-width="2"/>
+  <text x="110" y="180" fill="#B8FF4D" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="6">SNAKEPIT.DEV</text>
+  <text x="110" y="300" fill="#F3F7EA" font-family="Arial, sans-serif" font-size="78" font-weight="900">Bring your AI stack</text>
+  <text x="110" y="390" fill="#F3F7EA" font-family="Arial, sans-serif" font-size="78" font-weight="900">under control.</text>
+  <text x="110" y="475" fill="#95A18F" font-family="Arial, sans-serif" font-size="34">Stop token burn. Fix agent chaos. Ship useful AI.</text>
+</svg>
